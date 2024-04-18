@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drama Episodes</title>
+  <style>
+    /* Add custom styles for fullscreen button */
+    #fullscreenBtn {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Drama Episode 1 -->
+<h2><strong>Drama Episode 1</strong></h2>
+<button onclick="playVideo('https://1024tera.com/sharing/embed?surl=54gmuWULhXfi-gnIauVSLw&resolution=360&autoplay=true&mute=false&uk=4398762739358&fid=11131508798573&slid=')">Play Episode 1</button>
+
+<!-- Button for fullscreen -->
+<button id="fullscreenBtn" onclick="toggleFullscreen()">Fullscreen</button>
+
+<!-- JavaScript function to play video and toggle fullscreen -->
+<script>
+  function playVideo(embedCode) {
+    var videoContainer = document.getElementById("videoContainer");
+    var srtFile='D:\Nice\No-Name\Subtitles'; // Replace 'path/to/mysub.srt' with the actual path to your SRT file
+    videoContainer.innerHTML = '<div itemscope itemtype="https://schema.org/VideoObject" style="position:relative;padding-bottom:56.25%;"><iframe src="' + embedCode + '&subtitles=' + srtFile + '" allow="buttonclick; fullscreen; picture-in-picture" allowfullscreen frameborder="0" width="100%" height="100%" style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>';
+  }
+
+  function toggleFullscreen() {
+    var videoFrame = document.querySelector('iframe');
+    if (videoFrame.requestFullscreen) {
+      videoFrame.requestFullscreen();
+    } else if (videoFrame.mozRequestFullScreen) { /* Firefox */
+      videoFrame.mozRequestFullScreen();
+    } else if (videoFrame.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+      videoFrame.webkitRequestFullscreen();
+    } else if (videoFrame.msRequestFullscreen) { /* IE/Edge */
+      videoFrame.msRequestFullscreen();
+    }
+  }
+</script>
+
+<!-- Container to display video -->
+<div id="videoContainer"></div>
+
+</body>
+</html>
