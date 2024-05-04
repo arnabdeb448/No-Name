@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drama Links</title>
     <style>
         body {
@@ -22,38 +22,43 @@
         }
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
+            align-items: flex-start;
             padding: 20px;
-        }
-        .poster {
-            width: 100%;
-            margin-bottom: 20px;
         }
         .details {
-            width: 100%;
+            flex: 1;
+            padding: 20px;
             background-color: #fff;
             border-radius: 5px;
-            padding: 20px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+        .poster {
+            flex: 1;
+            margin-right: 20px;
         }
         .synopsis {
-            width: 100%;
             background-color: #fff;
-            border-radius: 5px;
             padding: 20px;
-            box-sizing: border-box;
+            border-radius: 5px;
             margin-bottom: 20px;
         }
         .episode-list {
-            width: 100%;
+            max-width: 300px;
         }
         .episode-item {
+            margin-bottom: 10px;
             background-color: #fff;
             padding: 10px;
             border-radius: 5px;
-            margin-bottom: 10px;
+        }
+        .episode-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .episode-item a:hover {
+            color: #ff9900;
         }
         .download-button {
             background-color: #4CAF50;
@@ -65,8 +70,8 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+            margin-bottom: 10px;
             cursor: pointer;
-            margin-top: 10px;
         }
         .download-button:hover {
             background-color: #45a049;
@@ -78,7 +83,9 @@
         <h1>Drama Links</h1>
     </header>
     <div class="container">
-        <img src="Pictures/b_ts.jpg" alt="Drama Poster" class="poster">
+        <div class="poster">
+            <img src="Pictures/b_ts.jpg" alt="Drama Poster" style="max-width: 100%; border-radius: 5px;">
+        </div>
         <div class="details">
             <p><strong>Details:</strong></p>
             <p>Drama: Begins Youth</p>
@@ -89,29 +96,29 @@
             <p>Duration: 1 hr. 10 min.</p>
             <p>Content Rating: 15+ - Teens 15 or older</p>
         </div>
-        <div class="synopsis">
-            <h2>Synopsis:</h2>
-            <p>Bok Gwi Joo and his family were born with different supernatural powers. Bok Gwi Joo is able to travel back in time, but only to happy times in his life. He can’t change the past, so he can only dwell on those happy moments. Bok Gwi Joo becomes afflicted with depression, and this leads him to lose his supernatural power.His family also loses their own powers due to modern-day problems like insomnia, bulimia, and smartphone addiction. One day, Do Da He happens to get involved with Bok Gwi Joo and his family. She begins to live with them, and change occurs.</p>
+    </div>
+    <div class="synopsis">
+        <h2>Synopsis:</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget felis non velit rutrum pretium.</p>
+    </div>
+    <div class="episode-list">
+        <div class="episode-item">
+            <p>Episode 1</p>
+            <a href="https://teraboxapp.com/s/1xXWIt68CMe-ie4jK53OqTw" class="download-button">Download</a>
         </div>
-        <div class="episode-list">
-            <div class="episode-item">
-                <p>Episode 1</p>
-                <a href="https://teraboxapp.com/s/1xXWIt68CMe-ie4jK53OqTw" class="download-button">Download</a>
-            </div>
-            <div class="episode-item">
-                <p>Episode 2</p>
-                <a href="https://teraboxapp.com/s/19ZnC9yQTFtxEzh-FCXoolg" class="download-button">Download</a>
-            </div>
-            <div class="episode-item">
-                <p>Episode 3</p>
-                <a href="https://teraboxapp.com/s/1WlNK10EYCibaFJ6vxx8HsQ" class="download-button">Download</a>
-            </div>
-            <div class="episode-item">
-                <p>Episode 4</p>
-                <a href="https://teraboxapp.com/s/1RzRNi_fFm4i3LKGK7d9DPw" class="download-button">Download</a>
-            </div>
-            <!-- Add more episodes as needed -->
+        <div class="episode-item">
+            <p>Episode 2</p>
+            <a href="https://teraboxapp.com/s/19ZnC9yQTFtxEzh-FCXoolg" class="download-button">Download</a>
         </div>
+        <div class="episode-item">
+            <p>Episode 3</p>
+            <a href="https://teraboxapp.com/s/1WlNK10EYCibaFJ6vxx8HsQ" class="download-button">Download</a>
+        </div>
+        <div class="episode-item">
+            <p>Episode 4</p>
+            <a href="https://teraboxapp.com/s/1RzRNi_fFm4i3LKGK7d9DPw" class="download-button">Download</a>
+        </div>
+        <!-- Add more episodes as needed -->
     </div>
 </body>
 </html>
