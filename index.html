@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            font-size: 14px;
         }
         header {
             background-color: #ff9900;
@@ -29,22 +30,18 @@
         }
         main {
             padding: 20px;
-        }
-        .category {
-            margin-bottom: 20px;
-        }
-        .category h2 {
-            margin-bottom: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
         .drama {
-            width: calc(25% - 20px); /* Four dramas per row */
+            width: calc(50% - 20px); /* Two dramas per row on every device */
             position: relative;
             background-color: #EAEAEA;
             border: 1px solid #ddd;
             border-radius: 3px;
             margin: 10px;
             text-align: center;
-            float: left; /* Ensure dramas stay in a row */
         }
         .drama img {
             width: 100%;
@@ -69,40 +66,63 @@
             font-size: 12px;
             border-radius: 3px;
         }
+        .country-badge {
+            position: left;
+            bottom: 2px;
+            left: 2px;
+            padding: 1px 2px;
+            background-color: #3498DB;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 0px;
+        }
+        .status-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            padding: 3px 6px;
+            background-color: #27AE60;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Yichen 9.9</h1>
     </header>
+    <nav>
+        <a href="#">All Dramas</a>
+    </nav>
     <div id="search">
         <input type="text" id="searchInput" placeholder="Search dramas...">
         <button onclick="searchDramas()">Search</button>
     </div>
     <main>
-        <!-- Add your drama content here -->
-    </main>
-</body>
-</html>
-<main>
-        <div class="drama-container">
-                <div class="drama"> 
-                    <img src="Pictures/weak_hero.jpg" alt="Weak Hero Class 1">
-                    <div class="hotbadge">Tagalog Subtitle</div>
-                    <h4>Completed</h4>
-                    <a href="weak hero class 1.html">Weak Hero Class 1</a>
-                </div>
-                <div class="drama"> 
-                    <img src="Pictures/Alchemy_of_Souls.jpg" alt="Alchemy of Souls Season 1">
-                    <div class="hotbadge">Tagalog Subtitle</div>
+        <div class="drama"> 
+            <img src="Pictures/mr_bad.jpg" alt="Mr. Bad">
+                   <div class="hotbadge" style="position: absolute; top: 5px; right: 5px;">Tagalog Sub</div>
+                   <h4>Completed</h4>
+                   <a href="mrbad.html">Mr. Bad</a>
+               </div>
+         <div class="drama"> 
+             <img src="Pictures/Alchemy_of_Souls.jpg" alt="Alchemy of Souls Season 1">
+                    <div class="hotbadge" style="position: absolute; top: 5px; right: 5px;">Tagalog Dubbed</div>
                     <h4>Completed</h4>
                     <a href="s01.html">Alchemy of Souls S01</a>
+                </div>
+                <div class="drama"> 
+                    <img src="Pictures/the_8.jpg" alt="The 8 Show">
+                    <div class="hotbadge">Tagalog Dubbed</div>
+                    <h4>completed</h4>
+                    <a href="the8.html">The 8 Show</a>
                 </div>
                 <div class="drama"> 
                     <img src="Pictures/Only_forlove.jpg" alt="Only For Love">
                     <div class="hotbadge">Tagalog Subtitle</div>
                     <h4>Upcoming</h4>
-                    <a href="">Only For Love</a>
+                    <a href="onlyforlove.html">Only For Love</a>
                 </div>
                 <div class="drama"> 
                     <img src="Pictures/love_alarm.jpg" alt="Love Alarm Season 1">
@@ -131,7 +151,7 @@
                 <div class="drama"> 
                     <img src="Pictures/dare_to_love_me.jpg" alt="Dare to Love Me">
                     <div class="hotbadge">Tagalog Subtitle</div>
-                    <h4>1 episodes Updated</h4>
+                    <h4>3 episodes Updated</h4>
                     <a href="dare.html">Dare to Love Me</a>
                 </div>
                 <div class="drama"> 
@@ -385,25 +405,21 @@
                 <img src="Pictures/secretatry_kim.jpg" alt="What's Wrong with Secretary Kim">
                 <a href="secretary.html">What's Wrong with Secretary Kim</a>
             </div>
-            <div class="drama-container">
                 <div class="drama">
                     <div class="hotbadge">Completed</div>
                     <img src="Pictures/Doo_na.jpg" alt="Doona!">
                     <a href="donna.html">Doona!</a>
                 </div>
-                    <div class="drama-container">
                         <div class="drama">
                             <div class="hotbadge">Completed</div>
                             <img src="Pictures/crash_landing.jpg" alt="Crash Landing on You">
                             <a href="crash.html">Crash Landing on You</a>
                         </div>
-                        <div class="drama-container">
                             <div class="drama">
                                 <div class="hotbadge">Completed</div>
                                 <img src="Pictures/king_dom.jpg" alt=" Kingdom S01">
                                 <a href="kingdom.html">Kingdom S01</a>
                             </div>
-                            <div class="drama-container">
                                 <div class="drama">
                                     <div class="hotbadge">Premium</div>
                                     <img src="Pictures/ki_ngdom.jpg" alt="Kingdom S02">
@@ -411,7 +427,6 @@
                                 </div>
                             </div>                 
         </section>
-    </main>
     <script>
         function searchDramas() {
             var input, filter, sections, dramas, i, txtValue;
@@ -432,5 +447,6 @@
             }
         }
     </script>
+     </main>
 </body>
 </html>
