@@ -427,26 +427,24 @@
                                 </div>
                             </div>                 
         </section>
+    </main>
     <script>
         function searchDramas() {
-            var input, filter, sections, dramas, i, txtValue;
+            var input, filter, dramas, dramaTitles, i, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
-            sections = document.getElementsByTagName("section");
-            for (i = 0; i < sections.length; i++) {
-                dramas = sections[i].getElementsByClassName("drama");
-                for (var j = 0; j < dramas.length; j++) {
-                    a = dramas[j].getElementsByTagName("a")[0];
-                    txtValue = a.textContent || a.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        dramas[j].style.display = "";
-                    } else {
-                        dramas[j].style.display = "none";
-                    }
+            dramas = document.getElementsByClassName("drama");
+            dramaTitles = document.getElementsByTagName("h2");
+
+            for (i = 0; i < dramaTitles.length; i++) {
+                txtValue = dramaTitles[i].textContent || dramaTitles[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    dramas[i].style.display = "";
+                } else {
+                    dramas[i].style.display = "none";
                 }
             }
         }
     </script>
-     </main>
 </body>
 </html>
