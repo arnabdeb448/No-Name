@@ -430,18 +430,18 @@
     </main>
     <script>
         function searchDramas() {
-            var input, filter, dramas, dramaTitles, i, txtValue;
+            var input, filter, dramas, i, dramaTitle, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
             dramas = document.getElementsByClassName("drama");
-            dramaTitles = document.getElementsByTagName("h2");
-
-            for (i = 0; i < dramaTitles.length; i++) {
-                txtValue = dramaTitles[i].textContent || dramaTitles[i].innerText;
+    
+            for (i = 0; i < dramas.length; i++) {
+                dramaTitle = dramas[i].getElementsByTagName("h2")[0];
+                txtValue = dramaTitle.textContent || dramaTitle.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    dramas[i].style.display = "";
+                    dramas[i].style.display = ""; // Show the drama block
                 } else {
-                    dramas[i].style.display = "none";
+                    dramas[i].style.display = "none"; // Hide the drama block
                 }
             }
         }
