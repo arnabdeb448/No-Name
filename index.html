@@ -442,18 +442,20 @@
     </main>
     <script>
         function searchDramas() {
-            var input, filter, dramas, i, dramaTitle, txtValue;
+            var input, filter, sections, dramas, i, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
-            dramas = document.getElementsByClassName("drama");
-    
-            for (i = 0; i < dramas.length; i++) {
-                dramaTitle = dramas[i].getElementsByTagName("h2")[0];
-                txtValue = dramaTitle.textContent || dramaTitle.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    dramas[i].style.display = ""; // Show the drama block
-                } else {
-                    dramas[i].style.display = "none"; // Hide the drama block
+            sections = document.getElementsByTagName("section");
+            for (i = 0; i < sections.length; i++) {
+                dramas = sections[i].getElementsByClassName("drama");
+                for (var j = 0; j < dramas.length; j++) {
+                    a = dramas[j].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        dramas[j].style.display = "";
+                    } else {
+                        dramas[j].style.display = "none";
+                    }
                 }
             }
         }
